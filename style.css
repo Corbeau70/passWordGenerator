@@ -1,146 +1,195 @@
-/* From Uiverse.io by R1SH4BH81 */ 
-/* Form Container */
-body{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    align-content: center;
-    background-color: rgba(174, 0, 0, 0.822);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.form {
-  position: relative;
+body {
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
   display: flex;
-  max-width: 400px;
-  min-width: 300px;
-  flex-direction: column;
-  gap: 10px;
-  padding: 20px;
-  padding-top: 70px;
-  background: rgba(0, 0, 0, 0.6); /* Dark semi-transparent background */
-  border-radius: 15px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background: linear-gradient(135deg, #2b0f0f, #0f172a);
   overflow: hidden;
-  perspective: 1000px;
-  background: url(image.jpg) center no-repeat ;
-  background-size: cover;
-  transform-style: preserve-3d;
-  transform: rotateX(-10deg);
-  transition: all 0.3s ease-in-out;
-  backdrop-filter: blur(10px); /* Glassy blur effect */
-  box-shadow:
-    rgba(0, 0, 0, 0.6) 0px 2px 4px,
-    rgba(0, 0, 0, 0.5) 0px 7px 13px -3px,
-    rgba(0, 0, 0, 0.3) 0px -3px 0px inset;
-  animation: form-animation 0.5s ease-in-out;
 }
 
-@keyframes form-animation {
-  from {
-    transform: rotateX(-30deg);
-    opacity: 0;
-  }
-
-  to {
-    transform: rotateX(0deg);
-    opacity: 1;
-  }
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(4px);
 }
 
-/* Glassy Black Input */
-.password {
-  padding: 10px;
-  border-radius: 15px;
-  background: rgba(0, 0, 0, 0.4); /* Semi-transparent black background */
-  border: 2px solid rgba(255, 255, 255, 0.2); /* Light border to enhance the glass look */
-  backdrop-filter: blur(8px); /* Glassy blur */
-  box-shadow:
-    0px 2px 4px rgba(0, 0, 0, 0.5),
-    0px 7px 13px rgba(0, 0, 0, 0.3),
-    inset 0px -3px 0px rgba(0, 0, 0, 0.2);
+.container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  width: 100%;
+  max-width: 460px;
+  padding: 28px;
+  border-radius: 24px;
   color: white;
-  transition:
-    border-color 0.3s ease-in-out,
-    background-color 0.3s ease-in-out,
-    transform 0.3s ease-in-out,
-    box-shadow 0.3s ease-in-out;
-  transform-style: preserve-3d;
-  backface-visibility: hidden;
+  background:
+    linear-gradient(rgba(10, 10, 10, 0.58), rgba(10, 10, 10, 0.72)),
+    url("image.jpg") center center / cover no-repeat;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+h1 {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.95rem;
+  margin-bottom: 22px;
+  line-height: 1.5;
+}
+
+.output-box {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.password {
+  flex: 1;
+  min-height: 56px;
+  padding: 16px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  word-break: break-all;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.copy-btn,
+.generate-btn {
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease, background 0.2s ease;
+}
+
+.copy-btn:hover,
+.generate-btn:hover {
+  transform: translateY(-2px);
+}
+
+.copy-btn:active,
+.generate-btn:active {
+  transform: translateY(0);
+}
+
+.copy-btn {
+  padding: 0 16px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.18);
+  color: white;
+  font-weight: bold;
+  min-width: 92px;
 }
 
 .setting {
-    display: grid;
-    grid-template-columns: 75% 25%;
-}
-.setting p {
-    font-size: 17px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: #0a0a0a;
-    
-}
-.number {
-  padding: 10px;
-  border-radius: 15px;
-  background: rgba(0, 0, 0, 0.4); /* Semi-transparent black background */
-  border: 2px solid rgba(255, 255, 255, 0.2); /* Light border to enhance the glass look */
-  backdrop-filter: blur(8px); /* Glassy blur */
-  box-shadow:
-    0px 2px 4px rgba(0, 0, 0, 0.5),
-    0px 7px 13px rgba(0, 0, 0, 0.3),
-    inset 0px -3px 0px rgba(0, 0, 0, 0.2);
-  color: white;
-  transition:
-    border-color 0.3s ease-in-out,
-    background-color 0.3s ease-in-out,
-    transform 0.3s ease-in-out,
-    box-shadow 0.3s ease-in-out;
-  transform-style: preserve-3d;
-  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 18px;
 }
 
-.password:hover,
-.password:focus {
-  border-color: rgba(255, 255, 255, 0.4); /* Brightened border on hover/focus */
-  background-color: rgba(
-    0,
-    0,
-    0,
-    0.6
-  ); /* Darker glassy background on hover/focus */
-  transform: scale(1.05) rotateY(20deg);
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+.setting label {
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+.setting input {
+  height: 48px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.11);
+  color: white;
+  font-size: 1rem;
   outline: none;
 }
 
-/* Button Style */
-button {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  background: rgba(0, 0, 0, 0.6); /* Dark button background */
-  color: #fff;
-  font-size: 16px;
-  cursor: pointer;
-  transform-style: preserve-3d;
-  backface-visibility: hidden;
-  transform: rotateX(-10deg);
-  transition: all 0.3s ease-in-out;
-  box-shadow:
-    rgba(0, 0, 0, 0.5) 0px 2px 4px,
-    rgba(0, 0, 0, 0.4) 0px 7px 13px -3px,
-    rgba(0, 0, 0, 0.3) 0px -3px 0px inset;
+.setting input:focus {
+  border-color: rgba(255, 255, 255, 0.5);
 }
 
-button:hover {
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.2
-  ); /* Slightly lighter hover effect */
-  font-size: 17px;
-  transform: scale(1.05) rotateY(20deg) rotateX(10deg);
-  box-shadow:
-    rgba(0, 0, 0, 0.5) 0px 2px 4px,
-    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
-    inset 0px -3px 0px rgba(0, 0, 0, 0.2);
+.options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.11);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  cursor: pointer;
+  user-select: none;
+}
+
+.option input {
+  width: 18px;
+  height: 18px;
+  accent-color: #ffffff;
+}
+
+.option span {
+  font-size: 0.95rem;
+}
+
+.generate-btn {
+  width: 100%;
+  height: 52px;
+  border-radius: 14px;
+  background: white;
+  color: #111827;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.message {
+  min-height: 24px;
+  margin-top: 14px;
+  font-size: 0.92rem;
+  color: #f8fafc;
+}
+
+@media (max-width: 520px) {
+  .card {
+    padding: 20px;
+  }
+
+  .output-box {
+    flex-direction: column;
+  }
+
+  .copy-btn {
+    width: 100%;
+    height: 48px;
+  }
+
+  .options {
+    grid-template-columns: 1fr;
+  }
 }

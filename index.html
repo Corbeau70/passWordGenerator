@@ -1,24 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pass Word Generator</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Générateur de mot de passe</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <form class="form">
-        <div class="setting">
-            <p>Générer un code avec une longueur de : </p><input type="number" class="number" id="number">
-        </div>
-        <button type="button" id="btn">Générer</button>
-        <div class="password" id="password">Mots de passe</div>
-    </form>
+  <div class="overlay"></div>
 
+  <main class="container">
+    <div class="card">
+      <h1>🔐 Générateur de mot de passe</h1>
+      <p class="subtitle">Crée un mot de passe solide selon tes préférences.</p>
 
-    <footer>
+      <div class="output-box">
+        <div class="password" id="password">Clique sur “Générer”</div>
+        <button class="copy-btn" id="copyBtn" type="button">Copier</button>
+      </div>
 
-    </footer>
-    <script src="script.js"></script>
+      <div class="setting">
+        <label for="length">Longueur</label>
+        <input type="number" id="length" min="4" max="50" value="12" />
+      </div>
+
+      <div class="options">
+        <label class="option">
+          <input type="checkbox" id="lowercase" checked />
+          <span>Minuscules</span>
+        </label>
+
+        <label class="option">
+          <input type="checkbox" id="uppercase" checked />
+          <span>Majuscules</span>
+        </label>
+
+        <label class="option">
+          <input type="checkbox" id="numbers" checked />
+          <span>Chiffres</span>
+        </label>
+
+        <label class="option">
+          <input type="checkbox" id="symbols" checked />
+          <span>Symboles</span>
+        </label>
+      </div>
+
+      <button class="generate-btn" id="generateBtn" type="button">
+        Générer un mot de passe
+      </button>
+
+      <p class="message" id="message"></p>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
