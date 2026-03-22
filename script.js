@@ -2,7 +2,7 @@
 const letter = document.getElementById('letter');
 const number = document.getElementById('number');
 const symbole = document.getElementById('symbole');
-const passwordDisplay = document.getElementById('password'); // Le conteneur d'affichage
+const passwordDisplay = document.getElementById('password');
 const btn = document.getElementById('btn');
 
 // 1 - Les banques de caractères
