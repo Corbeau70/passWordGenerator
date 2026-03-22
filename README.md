@@ -172,14 +172,4 @@ Ce projet a l’air simple… mais il est très puissant pour progresser :
 👉 tu construis une vraie logique
 👉 tu crées une UI interactive
 
-C’est exactement le genre de projet parfait pour ton portfolio 💼
-
----
-
-Si tu veux, je peux t’aider à transformer ce projet en :
-
-👉 version SaaS
-👉 version React
-👉 version avec backend sécurisé
-
-Là, on passerait de “petit projet sympa” à “projet qui impressionne vraiment” 🚀
+C’est exactement le genre de projet parfait pour un portfolio 💼
